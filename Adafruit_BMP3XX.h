@@ -23,6 +23,7 @@
 #define __BMP3XX_H__
 
 #include "bmp3.h"
+#include <i2c_t3/i2c_t3.h>
 
 #include <Adafruit_I2CDevice.h>
 #include <Adafruit_SPIDevice.h>
@@ -43,7 +44,7 @@ public:
   Adafruit_BMP3XX();
 
   bool begin_I2C(uint8_t addr = BMP3XX_DEFAULT_ADDRESS,
-                 TwoWire *theWire = &Wire);
+                 i2c_t3 *theWire = &Wire);
   bool begin_SPI(uint8_t cs_pin, SPIClass *theSPI = &SPI);
   bool begin_SPI(int8_t cs_pin, int8_t sck_pin, int8_t miso_pin,
                  int8_t mosi_pin);
